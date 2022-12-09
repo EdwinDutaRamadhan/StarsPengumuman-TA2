@@ -22,6 +22,7 @@ public class InsertPengumumanMahasiswa extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        //Ambiil data dari FORM di JSP
         String title = request.getParameter("title");
         String category = request.getParameter("category");
         String type = request.getParameter("type");
