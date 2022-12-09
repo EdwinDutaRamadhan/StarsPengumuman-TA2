@@ -10,6 +10,7 @@ package Model;
  */
 public class UserModel {
     //id, title, category, type, desc, image
+    //alt + insert untuk generate function
     private String id, title, category, type, desc, image;
 
     public String getId() {

@@ -1,4 +1,4 @@
-<%@include file="Template/Header.html"%>
+<%@include file="Template/Header.html"%>//templaiting header
 <div class="container">
     <div class="row justify-content-center mt-4">
         <div class="col-md-4">
@@ -15,4 +15,4 @@
         </div>
     </div>
 </div>
-<%@include file="Template/Footer.html"%>
+<%@include file="Template/Footer.html"%>//templating footer

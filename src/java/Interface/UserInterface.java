@@ -12,6 +12,7 @@ import java.util.List;
  * @author HP
  */
 public interface UserInterface {
+    //Interface semua fungsi yang digunakan
     public List<UserModel> getAllPengumumanMahasiswa();
-    public boolean InsertPengumumanMahasiswa(UserModel model);
+    public boolean InsertPengumumanMahasiswa(UserModel model);//model merupakan aliasing dari UserModel sebagai perantara data
 }

@@ -18,22 +18,14 @@
     </head>
     <body>
         <%
-            DAO.UserDAO userDao = new DAO.UserDAO();
-            List<UserModel> pengumumanMahasiswa = new ArrayList<UserModel>();
-            pengumumanMahasiswa = userDao.getAllPengumumanMahasiswa();
-
-//            for (UserModel PM : pengumumanMahasiswa) {
-//                out.print(PM.getId());
-//                out.print(PM.getTitle());
-//                out.print(PM.getCategory());
-//                out.print(PM.getType());
-//                out.print(PM.getDesc());
-//                out.print(PM.getImage());
-//            }
+            DAO.UserDAO userDao = new DAO.UserDAO();//Alias DAO sebagai Object
+            List<UserModel> pengumumanMahasiswa = new ArrayList<UserModel>();//pengumumanMahasiswa merupakan list dalam bentuk ArrayList yang berisi UserModel
+            pengumumanMahasiswa = userDao.getAllPengumumanMahasiswa();//Perintah untuk menjalankan class getAllPengumumanMahasiswa pada DAO
         %>
         <div class="container">
             <div class="row mt-5">
-                <% for (UserModel PM : pengumumanMahasiswa) { %>
+                <% for (UserModel PM : pengumumanMahasiswa) { // perulangan semua data yg ada di List<UserModel>%>
+                
 
                 <div class="col-md-4 mb-3">
                     <div class="card w-100" style="width: 18rem;">
@@ -45,10 +37,10 @@
                                 <p><% out.print(PM.getCategory()); %></p>
                             </div>
                             <h5><% out.print(PM.getTitle()); %></h5>
-                            <p class="card-text"><% out.print(PM.getDesc()); %></p>
-                            <p class="card-text"><% out.print(PM.getType()); %></p>
+                            <p class="card-text"><%= PM.getDesc() %></p>
+                            <p class="card-text"><%= PM.getType() %></p>
                             <div class="m-2 w-100 ">
-                                <a class="btn btn-primary w-100" href="/details/<%= PM.getId() %>">Selengkapnya</a>
+                                <a class="btn btn-primary w-100" href="/details/<%= PM.getId() %>">Selengkapnya</a>//button details yang menumpangkan data ID
                             </div>
                         </div>
                     </div>
