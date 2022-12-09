@@ -41,7 +41,7 @@ public class InsertPengumumanMahasiswa extends HttpServlet {
         UserDAO DAO = new UserDAO();
         if(DAO.InsertPengumumanMahasiswa(model)){
             out.println("Berhasil menambahkan data");
-            response.sendRedirect("/StarsPengumuman/PengumumanMahasiswa.jsp");
+            response.sendRedirect("/StarsPengumuman/Admin/Dashboard.jsp");
         }else{
             out.println("Gagal menambahkan data");
         }

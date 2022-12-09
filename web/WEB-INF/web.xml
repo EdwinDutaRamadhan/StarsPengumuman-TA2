@@ -4,9 +4,25 @@
         <servlet-name>InsertPengumumanMahasiswa</servlet-name>
         <servlet-class>Service.InsertPengumumanMahasiswa</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeletePengumumanMahasiswa</servlet-name>
+        <servlet-class>Service.DeletePengumumanMahasiswa</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdatePengumumanMahasiswa</servlet-name>
+        <servlet-class>Service.UpdatePengumumanMahasiswa</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>InsertPengumumanMahasiswa</servlet-name>
         <url-pattern>/InsertPengumumanMahasiswa</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeletePengumumanMahasiswa</servlet-name>
+        <url-pattern>/DeletePengumumanMahasiswa</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdatePengumumanMahasiswa</servlet-name>
+        <url-pattern>/UpdatePengumumanMahasiswa</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

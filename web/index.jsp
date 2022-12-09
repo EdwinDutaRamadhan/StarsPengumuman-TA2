@@ -1,17 +1,18 @@
-<%-- 
-    Document   : index
-    Created on : Dec 9, 2022, 3:36:29 PM
-    Author     : HP
---%>
+<%@ page import = "java.io.*,java.util.*" %>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
+   <head>
+      <title>Page Redirection</title>
+   </head>
+   
+   <body>
+      <center>
+         <h1>Page Redirection</h1>
+      </center>
+      <%
+         // New location to be redirected
+         response.setStatus(response.SC_MOVED_TEMPORARILY);
+         response.setHeader("Location", "/StarsPengumuman/PengumumanMahasiswa.jsp"); 
+      %>
+   </body>
 </html>
