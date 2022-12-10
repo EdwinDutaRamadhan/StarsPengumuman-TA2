@@ -12,6 +12,14 @@
         <servlet-name>UpdatePengumumanMahasiswa</servlet-name>
         <servlet-class>Service.UpdatePengumumanMahasiswa</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SelectPengumuman</servlet-name>
+        <servlet-class>Service.SelectPengumuman</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DetailPengumuman</servlet-name>
+        <servlet-class>Service.DetailPengumuman</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>InsertPengumumanMahasiswa</servlet-name>
         <url-pattern>/InsertPengumumanMahasiswa</url-pattern>
@@ -23,6 +31,14 @@
     <servlet-mapping>
         <servlet-name>UpdatePengumumanMahasiswa</servlet-name>
         <url-pattern>/UpdatePengumumanMahasiswa</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SelectPengumuman</servlet-name>
+        <url-pattern>/SelectPengumuman</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetailPengumuman</servlet-name>
+        <url-pattern>/DetailPengumuman</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

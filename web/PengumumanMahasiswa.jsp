@@ -30,11 +30,9 @@
                                 <p><% out.print(PM.getCategory()); %></p>
                             </div>
                             <h5><% out.print(PM.getTitle()); %></h5>
-                            <p class="card-text"><%= PM.getDesc() %></p>
                             <p class="card-text"><%= PM.getType() %></p>
                             <div class="m-2 w-100 ">
-                                <a class="btn btn-primary w-100" href="/details/<%= PM.getId() %>">Selengkapnya</a>
-<!--                                button details yang menumpangkan data ID-->
+                                <a class="btn btn-primary" href="/StarsPengumuman/DetailPengumuman.jsp?id=<%= PM.getId() %>&category=<%= PM.getCategory() %>">Selengkapnya</a>
                             </div>
                         </div>
                     </div>

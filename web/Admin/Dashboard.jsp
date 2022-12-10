@@ -9,6 +9,7 @@
     DAO.UserDAO userDao = new DAO.UserDAO();//Alias DAO sebagai Object
     List<UserModel> pengumumanMahasiswa = new ArrayList<UserModel>();//pengumumanMahasiswa merupakan list dalam bentuk ArrayList yang berisi UserModel
     pengumumanMahasiswa = userDao.getAllPengumumanMahasiswa();//Perintah untuk menjalankan class getAllPengumumanMahasiswa pada DAO
+s
 %>
 
 <div class="container">

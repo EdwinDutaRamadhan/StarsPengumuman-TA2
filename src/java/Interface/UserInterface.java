@@ -4,6 +4,8 @@
  */
 package Interface;
 
+import Model.BeasiswaModel;
+import Model.KipModel;
 import Model.UserModel;
 import java.util.List;
 
@@ -16,4 +18,7 @@ public interface UserInterface {
     public List<UserModel> getAllPengumumanMahasiswa();
     public boolean DeletePengumumanMahasiswa(UserModel model);
     public boolean InsertPengumumanMahasiswa(UserModel model);//model merupakan aliasing dari UserModel sebagai perantara data
+    public List<UserModel> getSinglePengumumanMahasiswa(String id);
+    public List<BeasiswaModel> getAllBeasiswa();
+    public List<KipModel> getAllKip();
 }
