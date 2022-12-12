@@ -47,7 +47,7 @@ public class UserDAO implements UserInterface {
                 model.setTitle(rs.getString(2));
                 model.setCategory(rs.getString(3));
                 model.setType(rs.getString(4));
-                model.setDesc(rs.getString(5));
+                model.setDesk(rs.getString(5));
                 model.setImage(rs.getString(6));
                 ls.add(model);//insert data yang telah diisi di model menuju ke LIST untuk dikembalikan ke pemanggill fungsi ini
             }
@@ -68,7 +68,7 @@ public class UserDAO implements UserInterface {
             ps.setString(2, model.getTitle());
             ps.setString(3, model.getCategory());
             ps.setString(4, model.getType());
-            ps.setString(5, model.getDesc());
+            ps.setString(5, model.getDesk());
             ps.setString(6, model.getImage());
             ps.executeUpdate();
             result = true;//apabila insert data berhasil result == True
@@ -91,7 +91,7 @@ public class UserDAO implements UserInterface {
         } catch (SQLException ex) {
             Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         return result;
     }
 
@@ -101,7 +101,7 @@ public class UserDAO implements UserInterface {
 
         PreparedStatement ps;
         try {
-            ps = koneksi.prepareStatement("SELECT * FROM tb_mahasiswa WHERE id= "+ id +"");//query builder
+            ps = koneksi.prepareStatement("SELECT * FROM tb_mahasiswa WHERE id= " + id + "");//query builder
             ResultSet rs = ps.executeQuery();//menyimpan sementara hasil query
             while (rs.next()) {//apabila rs.next() == false (semua data sudah di ulang)
                 model = new UserModel();//alias model
@@ -109,7 +109,7 @@ public class UserDAO implements UserInterface {
                 model.setTitle(rs.getString(2));
                 model.setCategory(rs.getString(3));
                 model.setType(rs.getString(4));
-                model.setDesc(rs.getString(5));
+                model.setDesk(rs.getString(5));
                 model.setImage(rs.getString(6));
                 ls.add(model);//insert data yang telah diisi di model menuju ke LIST untuk dikembalikan ke pemanggill fungsi ini
             }
@@ -164,6 +164,52 @@ public class UserDAO implements UserInterface {
         }
 
         return ls;//mengembalikan nilai dari eksekusi query ALL
+    }
+
+    @Override
+    public boolean UpdatePengumumanMahasiswa(UserModel model) {
+        boolean result = false;
+
+        try {
+            PreparedStatement ps = koneksi.prepareStatement("UPDATE tb_mahasiswa SET title=?, category=?, type=?, desk=?, image=? WHERE id=?");
+            model = new UserModel();
+            System.out.println("Desc " + model.getDesk());
+            ps.setString(1, model.getTitle());
+            ps.setString(2, model.getCategory());
+            ps.setString(3, model.getType());
+            ps.setString(4, model.getDesk());
+            ps.setString(5, model.getImage());
+            ps.setString(6, model.getId());
+            ps.executeUpdate();
+            result = true;
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return result;
+    }
+
+    @Override
+    public boolean UpdatePengumumanMahasiswaManual(String id, String title, String category, String type, String desk, String image) {
+         boolean result = false;
+
+        try {
+            PreparedStatement ps = koneksi.prepareStatement("UPDATE tb_mahasiswa SET title=?, category=?, type=?, desk=?, image=? WHERE id=?");
+            model = new UserModel();
+            System.out.println("Desc " + model.getDesk());
+            ps.setString(1, title);
+            ps.setString(2, category);
+            ps.setString(3, type);
+            ps.setString(4, desk);
+            ps.setString(5, image);
+            ps.setString(6, id);
+            ps.executeUpdate();
+            result = true;
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return result;
     }
 
 }

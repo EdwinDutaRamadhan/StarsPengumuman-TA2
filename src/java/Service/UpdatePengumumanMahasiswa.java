@@ -4,6 +4,8 @@
  */
 package Service;
 
+import DAO.UserDAO;
+import Model.UserModel;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -17,29 +19,36 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class UpdatePengumumanMahasiswa extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet UpdatePengumumanMahasiswa</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet UpdatePengumumanMahasiswa at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        //Ambiil data dari FORM di JSP
+        String id = request.getParameter("id");
+        String title = request.getParameter("title");
+        String category = request.getParameter("category");
+        String type = request.getParameter("type");
+        String desk = request.getParameter("desk");
+        String image = request.getParameter("image");
+        PrintWriter out = response.getWriter();
+//        out.println(id);
+//        out.println(title);
+//        out.println(category);
+//        out.println(type);
+        System.out.println(desk);
+//        out.println(image);
+        UserDAO DAO = new UserDAO();
+        UserModel model = new UserModel();
+        model.setId(id);
+        model.setTitle(title);
+        model.setCategory(category);
+        model.setType(type);
+        model.setDesk(desk);
+        model.setImage(image);
+
+        if (DAO.UpdatePengumumanMahasiswaManual(id,title,category,type,desk,image)) {
+            response.sendRedirect("/StarsPengumuman/Admin/Dashboard.jsp");
+        } else {
+            out.println("gagal mengupdate data");
         }
     }
 

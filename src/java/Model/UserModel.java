@@ -11,10 +11,18 @@ package Model;
 public class UserModel {
     //id, title, category, type, desc, image
     //alt + insert untuk generate function
-    private String id, title, category, type, desc, image;
+    private String id, title, category, type, desk, image;
 
     public String getId() {
         return id;
+    }
+
+    public String getDesk() {
+        return desk;
+    }
+
+    public void setDesk(String desk) {
+        this.desk = desk;
     }
 
     public void setId(String id) {
@@ -43,14 +51,6 @@ public class UserModel {
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
     }
 
     public String getImage() {

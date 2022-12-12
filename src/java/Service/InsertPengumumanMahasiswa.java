@@ -26,7 +26,7 @@ public class InsertPengumumanMahasiswa extends HttpServlet {
         String title = request.getParameter("title");
         String category = request.getParameter("category");
         String type = request.getParameter("type");
-        String desc = request.getParameter("desc");
+        String desk = request.getParameter("desk");
         String image = request.getParameter("image");
         PrintWriter out = response.getWriter();
         //inittial model
@@ -34,7 +34,7 @@ public class InsertPengumumanMahasiswa extends HttpServlet {
         model.setTitle(title);
         model.setCategory(category);
         model.setType(type);
-        model.setDesc(desc);
+        model.setDesk(desk);
         model.setImage(image);
         
         //insert model to DAO

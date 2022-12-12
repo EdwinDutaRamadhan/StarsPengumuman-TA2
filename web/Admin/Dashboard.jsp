@@ -4,17 +4,18 @@
 <%@page import="Model.UserModel"%>
 <%@include file="../Template/Header.html"%>
 <%@ include file="../Template/NavWithIcon.html" %>
+<div class="container-fluid">
 <h1>Admin Dashboard</h1>
 <%
     DAO.UserDAO userDao = new DAO.UserDAO();//Alias DAO sebagai Object
     List<UserModel> pengumumanMahasiswa = new ArrayList<UserModel>();//pengumumanMahasiswa merupakan list dalam bentuk ArrayList yang berisi UserModel
     pengumumanMahasiswa = userDao.getAllPengumumanMahasiswa();//Perintah untuk menjalankan class getAllPengumumanMahasiswa pada DAO
-s
+
 %>
 
-<div class="container">
+
     <a class="btn btn-primary" href="InsertPengumumanMahasiswa.jsp">Insert Data</a>
-    <table class="table table-hover">
+    <table class="table table-hover" >
         <tr>
             <th>Title</th>
             <th>Category</th>
@@ -30,15 +31,10 @@ s
             <td><%= PM.getTitle()%></td>
             <td><%= PM.getCategory()%></td>
             <td><%= PM.getType()%></td>
-            <td><%= PM.getDesc()%></td>
-            <td><%= PM.getImage()%></td>
-            <td>
-                <form method="POST" action="/StarsPengumuman/DeletePengumumanMahasiswa">
-                    <input type="hidden" name="id" value="<%= PM.getId() %>">
-                    <input type="submit" value="Delete" name="Delete"/>
-                </form>
-            </td>
-            <td>cell</td>
+            <td><%= PM.getDesk().substring(0,10) %>...</td>
+            <td><%= PM.getImage().substring(0,10)%></td>
+            <td><a onclick="return confirm('Apakah anda yakin ingin menghapus');" href="/StarsPengumuman/DeletePengumumanMahasiswa?id=<%= PM.getId() %>">Delete</a> </td>
+            <td><a href="/StarsPengumuman/Admin/UpdatePengumumanMahasiswa.jsp?id=<%= PM.getId() %>">Update</a></td>
         </tr>
         <% }%>
 
