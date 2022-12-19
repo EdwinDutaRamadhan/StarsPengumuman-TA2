@@ -5,7 +5,10 @@
 <%@include file="../Template/Header.html"%>
 <%@ include file="../Template/NavWithIcon.html" %>
 <div class="container-fluid">
-<h1>Admin Dashboard</h1>
+    <a class="" href="/StarsPengumuman/Admin/Dashboard.jsp">Admin Pengumuman &nbsp;|</a> &nbsp;
+        <a class="text-decoration-none " href="/StarsPengumuman/Admin/DashboardBeasiswa.jsp">Admin Beasiswa &nbsp;| </a>&nbsp;
+        <a class="text-decoration-none " href="/StarsPengumuman/Admin/DashboardKip.jsp">Admin Kip</a>
+        <h2 class="text-center">Admin Dashboard Pengumuman Mahasiswa</h2>
 <%
     DAO.UserDAO userDao = new DAO.UserDAO();//Alias DAO sebagai Object
     List<UserModel> pengumumanMahasiswa = new ArrayList<UserModel>();//pengumumanMahasiswa merupakan list dalam bentuk ArrayList yang berisi UserModel

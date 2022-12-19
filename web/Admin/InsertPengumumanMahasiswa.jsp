@@ -7,7 +7,7 @@
                 Title : <input class="form-control" type="text" name="title"><br>
                 Category : <input class="form-control" type="text" name="category"><br>
                 Type : <input class="form-control"  type="text" name="type"><br>
-                Description : <textarea class="form-control"  name="desc" rows="10" cols="20"></textarea><br>
+                Description : <textarea class="form-control"  name="desk" rows="10" cols="20"></textarea><br>
                 <!--            Image : <input type="file" id="id" accept="image/png,image/jpeg" multiple="multiple">-->
                 Image(LINK) : <input type="text" name="image" >
                 <input class="btn btn-outline-primary mt-2" type="submit" value="Insert">

@@ -13,13 +13,10 @@
     DAO.UserDAO userDao = new DAO.UserDAO();//Alias DAO sebagai Object
     List<UserModel> pengumumanMahasiswa = new ArrayList<UserModel>();//pengumumanMahasiswa merupakan list dalam bentuk ArrayList yang berisi UserModel
     pengumumanMahasiswa = userDao.getSinglePengumumanMahasiswa(id);//Perintah untuk menjalankan class getAllPengumumanMahasiswa pada DAO
-
     List<BeasiswaModel> tableBeasiswa = new ArrayList<BeasiswaModel>();
     tableBeasiswa = userDao.getAllBeasiswa();
-    
     List<KipModel> tableKip = new ArrayList<KipModel>();
     tableKip = userDao.getAllKip();
-
 %>
 <div class="container-fluid" style="background: url('https://mlc-wels.edu/events/wp-content/uploads/sites/50/2015/12/Auditorium-2-1500x1001.jpg');background-position: center; height: 400px;">
     <div class="container">
@@ -29,11 +26,9 @@
 <div class="container">
     <% for (UserModel PM : pengumumanMahasiswa) { // perulangan semua data yg ada di List<UserModel>%>
     <div class="row mt-5">
-
         <div class="container">
             <img class="img-fluid w-100" src="<%= PM.getImage()%>" alt="alt"/>
         </div>
-
     </div>
     <div class="row justify-content-start">
         <div class="col-md-4 mt-3 mb-3">
@@ -42,10 +37,9 @@
     </div>
     <div class="row mb-3">
         <p class="text-muted">
-            <%= PM.getDesc()%>
+            <%= PM.getDesk()%>
         </p>
     </div>
-    
     <div class="row">
         <div class="col-md-12">
             <% if (category.equals("Beasiswa")) { %>
